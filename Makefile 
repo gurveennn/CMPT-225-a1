@@ -1,0 +1,20 @@
+all: DQarraytest DQtest 
+
+
+DQarraytest: DQarraytest.o  # test program for for Deque class
+	g++ -Wall -o DQarraytest DQarraytest.o  
+
+DQtest: DQtest.o  # test program for Deque class
+	g++ -Wall -o DQtest DQtest.o  
+
+
+
+DQarraytest.o: DQarraytest.cpp Dequeue.h dsexceptions.h
+	g++ -Wall -o DQarraytest.o -c DQarraytest.cpp 
+
+DQtest.o: DQtest.cpp Deque.h dsexceptions.h
+	g++ -Wall -o DQtest.o -c DQtest.cpp 
+
+
+clean:
+	rm -f DQarraytest DQtest *.o
